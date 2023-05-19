@@ -95,11 +95,3 @@ class SignUpPage(Browser):
 
 
 
-
-'''
-Elemente:Personal_Radio_Button, Bussines_radio_button,Continue_button,first_name_field,
-last_name_field,email_field,password_field,confirm_password,SIGN_UP BUTTON
-- Creati metode relevante pentru aceste field-uri:
-    - adaugare de text pentru fields elements
-    - click SING_UP BUTTON si Continue_button
-'''
