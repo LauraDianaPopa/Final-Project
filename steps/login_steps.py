@@ -16,8 +16,9 @@ def step_impl(context,email):
 def step_impl(context, password):
     context.login_page.password_field(password)
 
-@then('login: I click on the log in button')
+@when('login: I click on the log in button')
 def step_impl(context):
     context.login_page.login_button()
+
 
 

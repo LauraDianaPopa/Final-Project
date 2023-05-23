@@ -16,13 +16,10 @@ def step_impl(context):
 def step_impl(context):
     context.sign_up_page.sign_up()
 
-@when('sign_up: I click on the Bussiness button')
-def step_impl(context):
-    context.sign_up_page.click_Bussines_button()
 
-@when('sign_up: I click on the Personal button')
+@when('sign_up: I test the Bussiness button and Personal button')
 def step_impl(context):
-    context.sign_up_page.click_Personal_button()
+    context.sign_up_page.click_radio_button()
 
 @when('sign_up: I click on the CONTINUE button')
 def step_impl(context):
@@ -73,6 +70,10 @@ def step_impl(context):
 def step_impl(context, password):
     context.sign_up_page.password_field(password)
 
-@then('sign_up: I press Enter after I whrite my password')
+@when('sign_up: I press Enter after I whrite my password')
 def step_impl(context):
     context.sign_up_page.enter_after_password_field()
+
+@then('sign_up: I test if url logout is egal with url login')
+def step_impl(context):
+    context.sign_up_page.test_url_dupa_delogare()

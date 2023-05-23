@@ -7,6 +7,9 @@ Feature: Check the Login Page functionality
     Scenario: Check the login page when I enter my email and password
     When login: I fill in Enter your email "popa_laura_diana@yahoo.com"
     When login: I fill in Enter your password "parola01"
-    Then login: I click on the log in button
+    When login: I click on the log in button
+
+
+
 
 

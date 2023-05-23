@@ -41,14 +41,14 @@ class SignUpPage(Browser):
     def sign_up(self):
         self.driver.find_element(*self.SIGN_UP).click()
         sleep(1)
-
-    def click_Bussines_button(self):
-        self.driver.find_element(*self.BUSINESS_BUTTON).click()
-        sleep(1)
-
-    def click_Personal_button(self):
-        self.driver.find_element(*self.PERSONAL_BUTTON).click()
-        sleep(1)
+    def click_radio_button(self, number=0):
+        if number == 1:
+            self.driver.find_element(*self.BUSINESS_BUTTON).click()
+        elif number==2:
+            self.driver.find_element(*self.PERSONAL_BUTTON).click()
+        else:
+            self.driver.find_element(*self.BUSINESS_BUTTON).click()
+            self.driver.find_element(*self.PERSONAL_BUTTON).click()
 
 
     def continue_button(self):
@@ -111,6 +111,11 @@ class SignUpPage(Browser):
     def enter_after_password_field(self):
         self.driver.find_element(*self.PASSWORD).send_keys(Keys.ENTER)
         sleep(1)
+
+    def test_url_dupa_delogare(self):
+        url_dupa_delogare = self.driver.current_url
+        expected_url = 'https://jules.app/sign-up'
+        assert url_dupa_delogare == expected_url, f'Invalid url: {url_dupa_delogare} este diferit de {expected_url}'
 
 
 

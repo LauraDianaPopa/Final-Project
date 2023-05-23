@@ -11,8 +11,7 @@ Feature: Check the SignIn Page functionality
     When sign_up: I test if the url is correct
     When sign_up: I test if the title of the page is correct
     When sign_up: I click on the sign up button
-    When sign_up: I click on the Bussiness button
-    When sign_up: I click on the Personal button
+    When sign_up: I test the Bussiness button and Personal button
     When sign_up: I click on the CONTINUE button
     When sign_up: I test if the first name is "Laura"
     When sign_up: I press Enter after I whrite my first name
@@ -25,4 +24,5 @@ Feature: Check the SignIn Page functionality
     When sign_up: I test if the error is not displayed anymore
     When sign_up: I press Enter after I whrite my email
     When sign_up: I fill in your password "Parola-123"
-    Then sign_up: I press Enter after I whrite my password
+    When sign_up: I press Enter after I whrite my password
+    Then sign_up: I test if url logout is egal with url login
