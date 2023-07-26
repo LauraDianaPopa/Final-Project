@@ -15,6 +15,14 @@ class LoginPage(Browser):
     def navigate_to_login_page(self):
         self.driver.get("https://jules.app/sign-in")
 
+    def email_field(self, email):
+        self.driver.find_element(*self.EMAIL).send_keys(email)
+
+    def rong_password(self, rong_pass):
+        self.driver.find_element(*self.PASS).send_keys(rong_pass)
+
+    def login_button1(self):
+        self.driver.find_element(*self.LOGIN).click()
 
     def email_field(self, email):
         self.driver.find_element(*self.EMAIL).send_keys(email)

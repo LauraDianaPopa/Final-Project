@@ -12,6 +12,14 @@ def step_impl(context):
 def step_impl(context,email):
     context.login_page.email_field(email)
 
+@when ('login: I fill a rong password in the fill Enter your password "{rong_pass}"')
+def step_impl(context, rong_pass):
+    context.login_page.rong_password(rong_pass)
+
+@when ('login: I click on the log in button')
+def step_impl(context):
+    context.login_page.login_button1()
+
 @when('login: I fill in Enter your password "{password}"')
 def step_impl(context, password):
     context.login_page.password_field(password)
