@@ -11,6 +11,9 @@ class LoginPage(Browser):
     EMAIL= (By.CSS_SELECTOR, 'input[placeholder="Enter your email"]')
     PASS = (By.CSS_SELECTOR, 'input[placeholder="Enter your password"]')
     LOGIN = (By.XPATH, "//button")
+    FORGOT_PASS = (By.ID, 'forgot-password-link')
+    PASS_1 = (By.CSS_SELECTOR, 'input[placeholder="Enter your email"]')
+    SEND = (By.ID, 'login-button')
 
     def navigate_to_login_page(self):
         self.driver.get("https://jules.app/sign-in")
@@ -24,7 +27,17 @@ class LoginPage(Browser):
     def login_button1(self):
         self.driver.find_element(*self.LOGIN).click()
 
-    def email_field(self, email):
+    def forgot_link(self):
+        self.driver.find_element(*self.FORGOT_PASS).click()
+
+    def email_field_1(self, email):
+        self.driver.find_element(*self.PASS_1).send_keys(email)
+
+    def send_email(self):
+        self.driver.find_element(*self.SEND).click()
+
+
+    def email_field_2(self, email):
         self.driver.find_element(*self.EMAIL).send_keys(email)
 
 

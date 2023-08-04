@@ -20,6 +20,22 @@ def step_impl(context, rong_pass):
 def step_impl(context):
     context.login_page.login_button1()
 
+@when ('login: I click Forgot password?')
+def step_impl(context):
+    context.login_page.forgot_link()
+
+@when ('login: I fill in Enter your email "{email}"')
+def step_impl(context, email):
+    context.login_page.email_field_1(email)
+
+@when('login: I click SEND EMAIL')
+def step_impl(context):
+    context.login_page.send_email()
+
+@when('login: I fill in Enter your email "{email}"')
+def step_impl(context, email):
+    context.login_page.email_field_2(email)
+
 @when('login: I fill in Enter your password "{password}"')
 def step_impl(context, password):
     context.login_page.password_field(password)
